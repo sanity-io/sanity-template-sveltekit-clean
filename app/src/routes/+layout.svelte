@@ -1,3 +1,9 @@
+<script lang="ts">
+	import { isPreviewing, VisualEditing } from '@sanity/visual-editing/svelte';
+
+	import LiveMode from '../components/LiveMode.svelte';
+</script>
+
 <div class="container">
 	<header class="header">
 		<a class="header__title" href="/">SvelteKit + Sanity</a>
@@ -24,3 +30,8 @@
 		</p>
 	</footer>
 </div>
+
+{#if $isPreviewing}
+	<VisualEditing />
+	<LiveMode />
+{/if}
