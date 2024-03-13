@@ -21,7 +21,7 @@
 		"@portabletext/types": "^2.0.7",
 		"@sanity/types": "^3.17.0",
 		"@sveltejs/adapter-auto": "^2.1.0",
-		"@sveltejs/kit": "^1.25.1",
+		"@sveltejs/kit": "^2.5.4",
 		"@typescript-eslint/eslint-plugin": "^5.62.0",
 		"@typescript-eslint/parser": "^5.62.0",
 		"autoprefixer": "^10.4.16",
