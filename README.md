@@ -71,4 +71,4 @@ The `/app` and `/studio` folders are meant to be deployed separately.
 
 Make sure that after `/app` is deployed the `.env` file in `/studio` is updated with its deployment URL under `SANITY_STUDIO_PREVIEW_URL`.
 
-And `/app` has a `.env` file with `SANITY_STUDIO_URL` that points to the Studio's deployment URL.
+And `/app` has a `.env` file with `PUBLIC_SANITY_STUDIO_URL` that points to the Studio's deployment URL.
