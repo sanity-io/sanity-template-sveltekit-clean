@@ -1,6 +1,8 @@
 import {visionTool} from '@sanity/vision'
 import {defineConfig} from 'sanity'
-import {deskTool} from 'sanity/desk'
+import {structureTool} from 'sanity/structure'
+import {presentationTool} from 'sanity/presentation'
+
 import {schemaTypes} from './schemas'
 
 export const projectId = process.env.SANITY_STUDIO_PROJECT_ID!
@@ -11,7 +13,19 @@ export default defineConfig({
   title: 'Project Name',
   projectId,
   dataset,
-  plugins: [deskTool(), visionTool()],
+  plugins: [
+    structureTool(),
+    presentationTool({
+      previewUrl: {
+        origin: process.env.SANITY_STUDIO_PREVIEW_URL || 'http://localhost:5173',
+        previewMode: {
+          enable: '/preview/enable',
+          disable: '/preview/disable',
+        },
+      },
+    }),
+    visionTool(),
+  ],
   schema: {
     types: schemaTypes,
   },
