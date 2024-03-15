@@ -23,28 +23,33 @@ This starter uses [SvelteKit](https://kit.svelte.dev/) for the frontend and [San
 
 ## Getting started
 
-Run the following commands from the **root directory** to prepare both applications:
+Run the following commands to prepare both applications, each step should be executed from the **root directory**:
 
-1. Install dependencies
+1. Install dependencies.
 
 ```sh
 pnpm install
 ```
 
-2. Select or create a Sanity project and dataset, and output the details to a `.env.local` file
+2. Select or create a Sanity project and dataset, and output the details to a `.env` file.
 
 ```sh
-cd studio && pnpm sanity init --env .env.local
+cd studio && pnpm sanity init --env .env
 ```
 
-3. Copy environment variable files
+3. [Generate a token](https://www.sanity.io/docs/http-auth#4c21d7b829fe) with read permissions for use in the next step.
+
+```sh
+pnpm sanity manage
+```
+
+4. Copy the example app `.env` file and populate it with the required values.
 
 ```sh
 cp ./app/.env.example ./app/.env
-cp ./studio/.env.example ./studio/.env
 ```
 
-4.  Start the development servers:
+5.  Start the development servers:
 
 ```sh
 pnpm dev
@@ -52,8 +57,6 @@ pnpm dev
 
 - Your SvelteKit app should now be running on [http://localhost:5173/](http://localhost:5173/).
 - Your Studio should now be running on [http://localhost:3333/](http://localhost:3333/).
-
-_Feel free to move each of the folders to their own location and check them into version control._
 
 ### Add content
 
