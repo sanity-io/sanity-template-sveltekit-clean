@@ -25,7 +25,7 @@
   "devDependencies": {
     "@sanity/eslint-config-studio": "^3.0.1",
     "@types/node": "^18.19.23",
-    "@types/react": "^18.2.65",
+    "@types/react": "^18.2.73",
     "eslint": "^8.57.0",
     "prettier": "^3.2.5",
     "typescript": "^5.4.2"
