@@ -2,6 +2,10 @@
   "name": "sanity-template-sveltekit-clean",
   "version": "1.0.0",
   "private": true,
+  "workspaces": [
+    "app",
+    "studio"
+  ],
   "scripts": {
     "dev": "pnpm -r dev",
     "format": "prettier --cache --write ."
