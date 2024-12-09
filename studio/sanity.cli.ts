@@ -6,4 +6,5 @@ export default defineCliConfig({
     projectId,
     dataset,
   },
+  studioHost: process.env.SANITY_STUDIO_STUDIO_HOST,
 })
