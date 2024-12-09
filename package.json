@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "private": true,
   "workspaces": [
-    "app",
+    "sveltekit-app",
     "studio"
   ],
   "scripts": {
-    "dev": "concurrently \"npm run dev --workspace=app\" \"npm run dev --workspace=studio\"",
+    "dev": "concurrently \"npm run dev --workspace=sveltekit-app\" \"npm run dev --workspace=studio\"",
     "format": "prettier --cache --write ."
   },
   "prettier": {
