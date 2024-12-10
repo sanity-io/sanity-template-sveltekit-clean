@@ -1,74 +1,91 @@
-# A minimal SvelteKit site with Sanity Studio
+# Clean SvelteKit + Sanity app
 
-This starter uses [SvelteKit](https://kit.svelte.dev/) for the frontend and [Sanity](https://sanity.io/) to handle its content.
+This template includes a [SvelteKit](https://svelte.dev/docs/kit/introduction) app with a [Sanity Studio](https://www.sanity.io/) – an open-source React application that connects to your Sanity project’s hosted dataset. The Studio is configured locally and can then be deployed for content collaboration.
 
-## Featuring
+## Features
 
-- How to fetch content as data from [the Sanity Content Lake](https://www.sanity.io/docs/datastore)
-- How to render block content with [Portable Text](https://www.sanity.io/docs/presenting-block-text)
-- A [Sanity Studio](https://www.sanity.io/docs/sanity-studio) to create and edit content
-- Visual editing with live updates through [Presentation](https://www.sanity.io/docs/presentation)
-- How to crop and render images with [Sanity Image URLs](https://www.sanity.io/docs/image-url)
+- Fetch content seamlessly with [Sanity Content Lake](https://www.sanity.io/docs/datastore).
+- Render beautiful block content using [Portable Text](https://www.sanity.io/docs/presenting-block-text).
+- Manage and create content with the intuitive [Sanity Studio](https://www.sanity.io/docs/sanity-studio).
+- Live visual editing through [Sanity's Presentation tools](https://www.sanity.io/docs/presentation).
+- Advanced image cropping and rendering via [Sanity Image URLs](https://www.sanity.io/docs/image-url).
 
-> **Note**
->
-> This starter features an `/app` and a `/studio` folder. The `/app` folder contains the frontend code, and the `/studio` folder contains the Sanity Studio code.
->
-> It is configured as a monorepo using [pnpm workspaces](https://pnpm.io/workspaces), but you can treat these directories as separate projects if you prefer.
+## Demo
 
-## Prerequisities
+https://sanity-template-sveltekit-clean.sanity.build
 
-- [Node.js](https://nodejs.org/en/) (v14.18 or later)
-- [Sanity CLI](https://www.sanity.io/docs/getting-started-with-sanity-cli) (optional)
+## Getting Started
 
-## Getting started
+### Install the template
 
-Run the following commands to prepare both applications, each step should be executed from the **root directory**:
+#### 1. Initialize template with Sanity CLI
 
-1. Install dependencies.
+Run the command in your Terminal to initialize this template on your local computer.
 
-```sh
-pnpm install
+See the documentation if you are [having issues with the CLI](https://www.sanity.io/help/cli-errors).
+
+```shell
+npm create sanity@latest -- --template sanity-template-sveltekit-clean
 ```
 
-2. Select or create a Sanity project and dataset, and output the details to a `.env` file.
+#### 2. Run the application and Sanity Studio
 
-```sh
-cd studio && pnpm sanity init --env .env
+Navigate to the template directory using `cd <your app name>`, and start the development servers by running the following command
+
+```shell
+npm run dev
 ```
 
-3. [Generate a token](https://www.sanity.io/docs/http-auth#4c21d7b829fe) with read permissions for use in the next step.
+#### 3. Open the app and sign in to the Studio
 
-```sh
-pnpm sanity manage
+Open the SvelteKit app running locally in your browser on [http://localhost:5173](http://localhost:5173).
+
+Open the Studio running locally in your browser on [http://localhost:3333](http://localhost:3333). You should now see a screen prompting you to log in to the Studio. Use the same service (Google, GitHub, or email) that you used when you logged in to the CLI.
+
+### Adding content with Sanity
+
+#### 1. Publish your first document
+
+The template comes pre-defined with a schema containing a `Post` document type.
+
+From the Studio, click "+ Create" and select the `Post` document type. Go ahead and create and publish the document.
+
+Your content should now appear in your SvelteKit app ([http://localhost:5173](http://localhost:5173)) as well as in the Studio on the "Presentation" Tab
+
+#### 2. Extending the Sanity schema
+
+The schema for the `Post` document type is defined in the `studio/src/schemaTypes/post.ts` file. You can [add more document types](https://www.sanity.io/docs/schema-types) to the schema to suit your needs.
+
+### Deploying your application and inviting editors
+
+#### 1. Deploy Sanity Studio
+
+Your SvelteKit frontend (`/sveltekit-app`) and Sanity Studio (`/studio`) are still only running on your local computer. It's time to deploy and get it into the hands of other content editors.
+
+Back in your Studio directory (`/studio`), run the following command to deploy your Sanity Studio.
+
+```shell
+npx sanity deploy
 ```
 
-4. Copy the example app `.env` file and populate it with the required values.
+#### 2. Deploy SvelteKit app to Vercel
 
-```sh
-cp ./app/.env.example ./app/.env
-```
+You have the freedom to deploy your SvelteKit app to your hosting provider of choice. With Vercel and GitHub being a popular choice, we'll cover the basics of that approach.
 
-5.  Start the development servers:
+1. Create a GitHub repository from this project. [Learn more](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
+2. Create a new Vercel project and connect it to your Github repository.
+3. Set the `Root Directory` to your SvelteKit app.
+4. Configure your Environment Variables.
 
-```sh
-pnpm dev
-```
+#### 3. Invite a collaborator
 
-- Your SvelteKit app should now be running on [http://localhost:5173/](http://localhost:5173/).
-- Your Studio should now be running on [http://localhost:3333/](http://localhost:3333/).
+Now that you’ve deployed your SvelteKit application and Sanity Studio, you can optionally invite a collaborator to your Studio. Open up [Manage](https://www.sanity.io/manage), select your project and click "Invite project members"
 
-### Add content
+They will be able to access the deployed Studio, where you can collaborate together on creating content.
 
-1. Visit the Studio and create and publish a new `Post` document
-2. Visit the App and refresh the page to see your content rendered on the page
+## Resources
 
-The schema for the `Post` document is defined in the `/studio/schemas` folder. You can add more documents and schemas to the Studio to suit your needs.
-
-## Deployments
-
-The `/app` and `/studio` folders are meant to be deployed separately.
-
-Make sure that after `/app` is deployed the `.env` file in `/studio` is updated with its deployment URL under `SANITY_STUDIO_PREVIEW_URL`.
-
-And `/app` has a `.env` file with `PUBLIC_SANITY_STUDIO_URL` that points to the Studio's deployment URL.
+- [Sanity documentation](https://www.sanity.io/docs/)
+- [SvelteKit documentation](https://svelte.dev/docs/kit/introduction/)
+- [Join the Sanity Community](https://slack.sanity.io)
+- [Learn Sanity](https://www.sanity.io/learn)
