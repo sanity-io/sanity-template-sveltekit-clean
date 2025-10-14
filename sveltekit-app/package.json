@@ -1,41 +1,35 @@
 {
-	"name": "sveltekit-app",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"dev": "vite dev",
-		"build": "vite build",
-		"preview": "vite preview",
-		"lint": "prettier --plugin-search-dir . --check . && eslint .",
-		"format": "prettier --plugin-search-dir . --write ."
-	},
-	"dependencies": {
-		"@sanity/client": "^6.15.4",
-		"@sanity/image-url": "^1.0.2",
-		"@sanity/svelte-loader": "^1.11.1",
-		"@sanity/visual-editing": "^2.0.0",
-		"groq": "^3.33.0"
-	},
-	"devDependencies": {
-		"@portabletext/svelte": "^2.1.11",
-		"@portabletext/types": "^2.0.13",
-		"@sanity/types": "^3.52.4",
-		"@sveltejs/adapter-auto": "^3.2.2",
-		"@sveltejs/kit": "^2.49.5",
-		"@sveltejs/vite-plugin-svelte": "^3.1.1",
-		"@typescript-eslint/eslint-plugin": "^6.21.0",
-		"@typescript-eslint/parser": "^6.21.0",
-		"autoprefixer": "^10.4.20",
-		"eslint": "^8.57.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-svelte": "^2.43.0",
-		"postcss": "^8.4.41",
-		"prettier": "^3.3.3",
-		"prettier-plugin-svelte": "^3.2.6",
-		"svelte": "^4.2.18",
-		"tslib": "^2.6.3",
-		"typescript": "^5.5.3",
-		"vite": "^5.3.5"
-	},
-	"type": "module"
+  "name": "sveltekit-app",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "vite build",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "dev": "vite dev",
+    "format": "prettier --write .",
+    "lint": "prettier --check . && eslint .",
+    "prepare": "svelte-kit sync || echo ''",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@sanity/image-url": "^1.2.0",
+    "groq": "^3.99.0"
+  },
+  "devDependencies": {
+    "@portabletext/svelte": "^3.0.1",
+    "@portabletext/types": "^2.0.15",
+    "@sanity/sveltekit": "^1.0.1",
+    "@sanity/types": "^3.99.0",
+    "@sveltejs/adapter-auto": "^6.1.1",
+    "@sveltejs/kit": "^2.46.5",
+    "@sveltejs/vite-plugin-svelte": "^6.2.1",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "svelte": "^5.39.12",
+    "svelte-check": "^4.3.3",
+    "typescript": "^5.9.3",
+    "vite": "^7.1.9"
+  }
 }

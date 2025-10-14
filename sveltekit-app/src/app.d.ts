@@ -1,14 +1,16 @@
-import type { LoaderLocals } from '@sanity/svelte-loader';
+import type {ResolvedPathname} from '$app/types'
+import type {SanityLocals} from '@sanity/sveltekit'
 
 // See https://kit.svelte.dev/docs/types#app
 // for information about these interfaces
 declare global {
-	namespace App {
-		// interface Error {}
-		interface Locals extends LoaderLocals {}
-		// interface PageData {}
-		// interface Platform {}
-	}
+  namespace App {
+    interface Locals extends SanityLocals {}
+  }
 }
 
-export {};
+declare module '$app/paths' {
+  export function resolve(path: '/preview/disable', options?: {redirect?: string}): ResolvedPathname
+}
+
+export {}
