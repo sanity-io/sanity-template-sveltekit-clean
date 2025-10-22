@@ -1,6 +1,0 @@
-{
-  "extends": [
-    "@sanity/eslint-config-studio",
-    "@babel/core"
-  ]
-}
