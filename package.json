@@ -14,7 +14,7 @@
   "devDependencies": {
     "@eslint/compat": "^1.4.0",
     "@eslint/js": "^9.37.0",
-    "@sanity/eslint-config-studio": "^3.0.1",
+    "@sanity/eslint-config-studio": "^5.0.2",
     "@sanity/prettier-config": "^2.0.1",
     "concurrently": "^9.1.0",
     "eslint": "^9.37.0",
