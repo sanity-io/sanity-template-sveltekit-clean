@@ -1,6 +1,13 @@
 # Clean SvelteKit + Sanity app
 
-This template includes a [SvelteKit](https://svelte.dev/docs/kit/introduction) app with a [Sanity Studio](https://www.sanity.io/) – an open-source React application that connects to your Sanity project’s hosted dataset. The Studio is configured locally and can then be deployed for content collaboration.
+This template includes a [SvelteKit](https://svelte.dev/docs/kit/introduction) app with a [Sanity Studio](https://www.sanity.io/) – an open-source React application that connects to your Sanity project's hosted dataset. The Studio is configured locally and can then be deployed for content collaboration.
+
+## Project Structure
+
+This is a pnpm workspace monorepo with two packages:
+
+- `/frontend` - SvelteKit application with Svelte 5
+- `/studio` - Sanity Studio v4
 
 ## Features
 
@@ -33,7 +40,7 @@ npm create sanity@latest -- --template sanity-io/sanity-template-sveltekit-clean
 Navigate to the template directory using `cd <your app name>`, and start the development servers by running the following command
 
 ```shell
-npm run dev
+pnpm run dev
 ```
 
 #### 3. Open the app and sign in to the Studio
@@ -60,7 +67,7 @@ The schema for the `Post` document type is defined in the `studio/src/schemaType
 
 #### 1. Deploy Sanity Studio
 
-Your SvelteKit frontend (`/sveltekit-app`) and Sanity Studio (`/studio`) are still only running on your local computer. It's time to deploy and get it into the hands of other content editors.
+Your SvelteKit frontend (`/frontend`) and Sanity Studio (`/studio`) are still only running on your local computer. It's time to deploy and get it into the hands of other content editors.
 
 Back in your Studio directory (`/studio`), run the following command to deploy your Sanity Studio.
 

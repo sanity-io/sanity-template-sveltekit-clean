@@ -2,12 +2,8 @@
   "name": "sanity-template-sveltekit-clean",
   "version": "1.0.0",
   "private": true,
-  "workspaces": [
-    "sveltekit-app",
-    "studio"
-  ],
   "scripts": {
-    "dev": "concurrently \"npm run dev --workspace=sveltekit-app\" \"npm run dev --workspace=studio\"",
+    "dev": "pnpm --parallel --filter=frontend --filter=studio dev",
     "format": "prettier --cache --write ."
   },
   "prettier": {
@@ -18,7 +14,6 @@
     "singleQuote": true
   },
   "devDependencies": {
-    "concurrently": "^9.1.0",
     "prettier": "3.3.3",
     "prettier-plugin-packagejson": "2.5.1"
   }
