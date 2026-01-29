@@ -14,22 +14,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@sanity/image-url": "^1.2.0",
-    "groq": "^4.11.0"
+    "@sanity/image-url": "^2.0.3",
+    "groq": "^5.7.0"
   },
   "devDependencies": {
     "@portabletext/svelte": "^3.0.1",
-    "@portabletext/types": "^2.0.15",
-    "@sanity/sveltekit": "^1.0.1",
-    "@sanity/types": "^4.11.0",
+    "@portabletext/types": "^4.0.1",
+    "@sanity/sveltekit": "^1.0.5",
+    "@sanity/types": "^5.7.0",
     "@sveltejs/adapter-auto": "^7.0.0",
-    "@sveltejs/kit": "^2.46.5",
-    "@sveltejs/vite-plugin-svelte": "^6.2.1",
-    "autoprefixer": "^10.4.21",
+    "@sveltejs/kit": "^2.50.1",
+    "@sveltejs/vite-plugin-svelte": "^6.2.4",
+    "autoprefixer": "^10.4.23",
     "postcss": "^8.5.6",
-    "svelte": "^5.39.12",
-    "svelte-check": "^4.3.3",
+    "svelte": "^5.49.0",
+    "svelte-check": "^4.3.5",
     "typescript": "^5.9.3",
-    "vite": "^7.1.9"
+    "vite": "^7.3.1"
   }
 }

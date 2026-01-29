@@ -15,16 +15,16 @@
     "start": "sanity start"
   },
   "dependencies": {
-    "@sanity/vision": "^4.11.0",
-    "react": "^19.2.0",
-    "react-dom": "^19.2.0",
-    "react-is": "^19.2.0",
-    "sanity": "^4.11.0",
-    "styled-components": "^6.1.19"
+    "@sanity/vision": "^5.7.0",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "react-is": "^19.2.4",
+    "sanity": "^5.7.0",
+    "styled-components": "^6.3.8"
   },
   "devDependencies": {
-    "@types/node": "^24.9.1",
-    "@types/react": "^19.2.2",
-    "typescript": "^5.5.3"
+    "@types/node": "^25.1.0",
+    "@types/react": "^19.2.10",
+    "typescript": "^5.9.3"
   }
 }
