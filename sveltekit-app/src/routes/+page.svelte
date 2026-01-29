@@ -5,7 +5,7 @@
   import type {PageProps} from './$types'
 
   const {data}: PageProps = $props()
-  const query = useQuery(data)
+  const query = $derived(useQuery(data))
   const posts = $derived($query.data)
 </script>
 

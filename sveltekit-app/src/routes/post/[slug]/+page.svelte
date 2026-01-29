@@ -6,7 +6,7 @@
   import type {PageProps} from './$types'
 
   const {data}: PageProps = $props()
-  const query = useQuery(data)
+  const query = $derived(useQuery(data))
   const post = $derived($query.data)
 </script>
 
@@ -69,13 +69,13 @@
     margin-top: var(--space-6);
   }
 
-  .post .post__content blockquote {
+  .post .post__content :global(blockquote) {
     border-left: 5px solid var(--black);
     padding-left: var(--space-3);
     margin-left: var(--space-4);
   }
 
-  .post .post__content a {
+  .post .post__content :global(a) {
     color: var(--blue-600);
     text-decoration: none;
   }
