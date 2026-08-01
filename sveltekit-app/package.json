@@ -20,7 +20,7 @@
   "devDependencies": {
     "@portabletext/svelte": "^3.0.1",
     "@portabletext/types": "^4.0.1",
-    "@sanity/sveltekit": "^1.0.5",
+    "@sanity/sveltekit": "^2.1.0",
     "@sanity/types": "^5.7.0",
     "@sveltejs/adapter-auto": "^7.0.0",
     "@sveltejs/kit": "^2.50.1",
