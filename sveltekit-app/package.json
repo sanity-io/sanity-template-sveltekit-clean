@@ -23,7 +23,7 @@
     "@sanity/sveltekit": "^2.1.0",
     "@sanity/types": "^5.7.0",
     "@sveltejs/adapter-auto": "^7.0.0",
-    "@sveltejs/kit": "^2.50.1",
+    "@sveltejs/kit": "^3.0.0",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "autoprefixer": "^10.4.23",
     "postcss": "^8.5.18",
