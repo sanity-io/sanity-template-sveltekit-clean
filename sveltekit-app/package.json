@@ -22,7 +22,7 @@
     "@portabletext/types": "^4.0.1",
     "@sanity/sveltekit": "^2.1.0",
     "@sanity/types": "^5.7.0",
-    "@sveltejs/adapter-auto": "^7.0.0",
+    "@sveltejs/adapter-auto": "^8.0.1",
     "@sveltejs/kit": "^2.50.1",
     "@sveltejs/vite-plugin-svelte": "^6.2.4",
     "autoprefixer": "^10.4.23",
