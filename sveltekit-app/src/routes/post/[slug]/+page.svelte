@@ -1,8 +1,8 @@
 <script lang="ts">
-  import {useQuery} from '@sanity/sveltekit'
   import {PortableText} from '@portabletext/svelte'
+  import {Image, isImageWithAsset} from '@sanity/sveltekit/image'
+  import {useQuery} from '@sanity/sveltekit/query'
   import {formatDate} from '$lib/utils'
-  import {urlFor} from '$lib/sanity/image'
   import type {PageProps} from './$types'
 
   const {data}: PageProps = $props()
@@ -12,11 +12,16 @@
 
 {#if post}
   <section class="post">
-    {#if post.mainImage}
-      <img
+    {#if isImageWithAsset(post.mainImage)}
+      <Image
         class="post__cover"
-        src={urlFor(post.mainImage).url()}
+        src={post.mainImage}
         alt="Cover image for {post.title}"
+        width={750}
+        height={380}
+        sizes="(min-width: 800px) 750px, 100vw"
+        placeholder="blur"
+        preload
       />
     {:else}
       <div class="post__cover--none"></div>
@@ -44,7 +49,7 @@
     margin: var(--space-1) 0 var(--space-4);
   }
 
-  .post .post__cover,
+  .post :global(img.post__cover),
   .post .post__cover--none {
     width: 100%;
     height: 200px;
@@ -106,7 +111,7 @@
   }
 
   @media (min-width: 800px) {
-    .post .post__cover,
+    .post :global(img.post__cover),
     .post .post__cover--none {
       width: 750px;
       height: 380px;

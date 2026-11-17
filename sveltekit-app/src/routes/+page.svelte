@@ -1,5 +1,5 @@
 <script lang="ts">
-  import {useQuery} from '@sanity/sveltekit'
+  import {useQuery} from '@sanity/sveltekit/query'
   import Card from '../components/Card.svelte'
   import Welcome from '../components/Welcome.svelte'
   import type {PageProps} from './$types'

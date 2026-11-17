@@ -1,5 +1,7 @@
 <script lang="ts">
-  import {PreviewMode, QueryLoader, VisualEditing} from '@sanity/sveltekit'
+  import {PreviewMode} from '@sanity/sveltekit/preview'
+  import {QueryLoader} from '@sanity/sveltekit/query'
+  import {VisualEditing} from '@sanity/sveltekit/visual-editing'
   import type {LayoutProps} from './$types'
   import {page} from '$app/state'
   import {resolve} from '$app/paths'

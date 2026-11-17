@@ -1,4 +1,5 @@
-import {setServerClient, handlePreviewMode, handleQueryLoader} from '@sanity/sveltekit'
+import {handlePreviewMode} from '@sanity/sveltekit/preview'
+import {handleQueryLoader, setServerClient} from '@sanity/sveltekit/query'
 import {redirect} from '@sveltejs/kit'
 import {sequence} from '@sveltejs/kit/hooks'
 import {serverClient} from '$lib/sanity/client.server'
