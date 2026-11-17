@@ -1,17 +1,21 @@
 <script lang="ts">
+  import {Image, isImageWithAsset} from '@sanity/sveltekit/image'
   import {formatDate} from '$lib/utils'
-  import {urlFor} from '$lib/sanity/image'
   import type {Post} from '$lib/sanity/queries'
 
   export let post: Post
 </script>
 
 <a class="card" href={`/post/${post.slug.current}`}>
-  {#if post.mainImage}
-    <img
+  {#if isImageWithAsset(post.mainImage)}
+    <Image
       class="card__cover"
-      src={urlFor(post.mainImage).width(500).height(300).url()}
+      src={post.mainImage}
       alt="Cover image for {post.title}"
+      width={500}
+      height={300}
+      sizes="(min-width: 800px) 367px, 100vw"
+      placeholder="blur"
     />
   {:else}
     <div class="card__cover--none"></div>
@@ -46,7 +50,7 @@
     margin: 0 var(--space-1) 0;
   }
 
-  .card .card__cover {
+  .card :global(img.card__cover) {
     width: 100%;
     height: 231px;
     -o-object-fit: cover;
@@ -122,7 +126,7 @@
       margin: 0 var(--space-4) 0;
     }
 
-    .card .card__cover,
+    .card :global(img.card__cover),
     .card .card__cover--none {
       min-width: 366.5px;
       max-width: 366.5px;

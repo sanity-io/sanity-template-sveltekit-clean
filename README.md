@@ -8,7 +8,7 @@ This template includes a [SvelteKit](https://svelte.dev/docs/kit/introduction) a
 - Render beautiful block content using [Portable Text](https://www.sanity.io/docs/presenting-block-text).
 - Manage and create content with the intuitive [Sanity Studio](https://www.sanity.io/docs/sanity-studio).
 - Live visual editing through [Sanity's Presentation tools](https://www.sanity.io/docs/presentation).
-- Advanced image cropping and rendering via [Sanity Image URLs](https://www.sanity.io/docs/image-url).
+- Responsive images with Studio crop, hotspot, and blur placeholders via [`<Image>`](https://github.com/sanity-io/sanity-sveltekit) from `@sanity/sveltekit/image`.
 
 ## Demo
 
